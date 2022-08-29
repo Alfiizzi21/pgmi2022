@@ -1,0 +1,1 @@
+<img src="hero.jpg" alt="">
