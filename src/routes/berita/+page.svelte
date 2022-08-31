@@ -113,7 +113,7 @@
 			
 		</div>
     </section>
-	<embed src= "" width= "500" height= "375">
+	<!-- <embed src= "" width= "500" height= "375"> -->
 	<!-- <div class="my-8 ">
 
 		<nav aria-label="Page navigation example" class="mx-auto">
