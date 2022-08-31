@@ -31,7 +31,7 @@
 	class="relative z-50 flex h-16 w-full items-center justify-between bg-sky-900 transition-colors duration-300 md:fixed md:top-0 {headerclass}"
 >
 	<a href={host}>
-		<img class="mx-4 h-10" src={logo} alt="pgmi logo" />
+		<img height="40" width="133" class="mx-4" src={logo} alt="pgmi logo" />
 	</a>
 	<div class="h-10 w-10 md:hidden">
 		<label class="cursor-pointer" for="nav-toggle">
