@@ -123,10 +123,6 @@
 <svelte:window bind:scrollY={y} />
 
 <style>
-	@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-	header {
-		font-family: 'Open Sans', sans-serif;
-	}
 	li {
 		color: white;
 		cursor: pointer;
