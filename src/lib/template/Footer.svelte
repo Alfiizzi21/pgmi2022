@@ -41,15 +41,15 @@
 				<h2 class="mb-6 text-sm font-semibold uppercase text-white">KONTAK</h2>
 				<ul class="text-gray-400">
 					<li class="mb-4 flex gap-2">
-						<span class="material-symbols-rounded"> mail </span>
+						<span class="material-icons"> mail </span>
 						pgmi-ftk@uinjambi.ac.id
 					</li>
 					<li class="mb-4 flex gap-2">
-						<span class="material-symbols-rounded"> call </span>
+						<span class="material-icons"> call </span>
 						+6281274504606
 					</li>
 					<li class="mb-4 flex gap-2">
-						<span class="material-symbols-rounded"> call </span>
+						<span class="material-icons"> call </span>
 						+6281327088437
 					</li>
 				</ul>

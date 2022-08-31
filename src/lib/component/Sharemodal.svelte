@@ -29,7 +29,7 @@
 	</div>
 	<div id="modal" class="fixed right-0 left-0 top-0 bottom-0 z-50 bg-black {modalClass}">
 		<div class="mx-auto mt-8 rounded bg-white p-6 text-base sm:w-[28rem]">
-			<span on:click={closeModal} class="material-symbols-rounded cursor-pointer"> close </span>
+			<span on:click={closeModal} class="material-icons cursor-pointer"> close </span>
 			<div class=" flex">
 				<input
 					type="text"
@@ -39,7 +39,7 @@
 					readonly
 				/>
 				<button class="flex h-10 w-10 items-center justify-center rounded-r bg-sky-900 text-white">
-					<span class="material-symbols-rounded "> link </span>
+					<span class="material-icons "> link </span>
 				</button>
 			</div>
 			<div class="mt-4 flex justify-start gap-2">

@@ -44,14 +44,14 @@
 			<img src={Newsimg} alt="" />
 			<div class="flex justify-between pt-2">
 				<div class="flex text-sm font-semibold text-slate-700">
-					<span class="material-symbols-rounded text-base"> calendar_month </span>
+					<span class="material-icons text-base"> calendar_month </span>
 					17/8/2022
-					<span class="material-symbols-rounded ml-1 text-base"> schedule </span>
+					<span class="material-icons ml-1 text-base"> schedule </span>
 					17:30
 				</div>
 				<Sharemodal url="tes">
 					<button class="">
-						<span class="material-symbols-rounded"> share </span>
+						<span class="material-icons"> share </span>
 					</button>
 				</Sharemodal>
 			</div>
@@ -64,14 +64,14 @@
 			<img src={Newsimg} alt="" />
 			<div class="flex justify-between pt-2">
 				<div class="flex text-sm font-semibold text-slate-700">
-					<span class="material-symbols-rounded text-base"> calendar_month </span>
+					<span class="material-icons text-base"> calendar_month </span>
 					17/8/2022
-					<span class="material-symbols-rounded ml-1 text-base"> schedule </span>
+					<span class="material-icons ml-1 text-base"> schedule </span>
 					17:30
 				</div>
 				<Sharemodal url="tes">
 					<button class="">
-						<span class="material-symbols-rounded"> share </span>
+						<span class="material-icons"> share </span>
 					</button>
 				</Sharemodal>
 			</div>
@@ -84,14 +84,14 @@
 			<img src={Newsimg} alt="" />
 			<div class="flex justify-between pt-2">
 				<div class="flex text-sm font-semibold text-slate-700">
-					<span class="material-symbols-rounded text-base"> calendar_month </span>
+					<span class="material-icons text-base"> calendar_month </span>
 					17/8/2022
-					<span class="material-symbols-rounded ml-1 text-base"> schedule </span>
+					<span class="material-icons ml-1 text-base"> schedule </span>
 					17:30
 				</div>
 				<Sharemodal url="tes">
 					<button class="">
-						<span class="material-symbols-rounded"> share </span>
+						<span class="material-icons"> share </span>
 					</button>
 				</Sharemodal>
 			</div>

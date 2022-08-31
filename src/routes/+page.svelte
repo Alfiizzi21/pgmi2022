@@ -36,7 +36,7 @@
 				<div class="font-semibold text-sky-700">
 					<a class="mx-auto flex w-max" href="{origin}/berita">
 						<div>Lihat Semua Berita</div>
-						<span class="material-symbols-rounded"> arrow_right_alt </span>
+						<span class="material-icons"> arrow_right_alt </span>
 					</a>
 				</div>
 			</div>
@@ -124,11 +124,11 @@
 						</h2>
 						<div class="agenda_ket flex flex-col text-base text-slate-500 md:flex-row md:gap-4">
 							<div class="flex ">
-								<span class="material-symbols-rounded mr-2"> schedule </span>
+								<span class="material-icons mr-2"> schedule </span>
 								07:30 - 09-11
 							</div>
 							<div class="flex">
-								<span class="material-symbols-rounded mr-2"> pin_drop </span>
+								<span class="material-icons mr-2"> pin_drop </span>
 								UIN Mendalo
 							</div>
 						</div>
@@ -145,11 +145,11 @@
 						</h2>
 						<div class="agenda_ket flex flex-col text-base text-slate-500 md:flex-row md:gap-4">
 							<div class="flex ">
-								<span class="material-symbols-rounded mr-2"> schedule </span>
+								<span class="material-icons mr-2"> schedule </span>
 								07:30 - 09-11
 							</div>
 							<div class="flex">
-								<span class="material-symbols-rounded mr-2"> pin_drop </span>
+								<span class="material-icons mr-2"> pin_drop </span>
 								UIN Mendalo
 							</div>
 						</div>
@@ -164,7 +164,7 @@
 			<div class="m-4">
 				<div class="flex text-base text-slate-500">
 					<div class="flex capitalize">
-						<span class="material-symbols-rounded mr-2"> calendar_month </span>
+						<span class="material-icons mr-2"> calendar_month </span>
 						kamis, 21 april 2020
 					</div>
 				</div>
@@ -175,7 +175,7 @@
 			<div class="m-4">
 				<div class="flex text-base text-slate-500">
 					<div class="flex capitalize">
-						<span class="material-symbols-rounded mr-2"> calendar_month </span>
+						<span class="material-icons mr-2"> calendar_month </span>
 						kamis, 21 april 2020
 					</div>
 				</div>

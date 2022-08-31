@@ -24,7 +24,7 @@
 		<div
 			class="float-right mr-4 flex h-12 w-12 -translate-y-16 cursor-pointer items-center justify-center rounded-full bg-white hover:bg-sky-100"
 		>
-			<span class="material-symbols-rounded text-sky-900"> share </span>
+			<span class="material-icons text-sky-900"> share </span>
 		</div>
 	</Sharemodal>
 </div>

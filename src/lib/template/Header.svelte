@@ -36,9 +36,9 @@
 	<div class="h-10 w-10 md:hidden">
 		<label class="cursor-pointer" for="nav-toggle">
 			{#if nav_toggle}
-				<span class="material-symbols-rounded pt-2 text-white">menu</span>
+				<span class="material-icons pt-2 text-white">menu</span>
 			{:else}
-				<span class="material-symbols-rounded pt-2 text-white">close</span>
+				<span class="material-icons pt-2 text-white">close</span>
 			{/if}
 		</label>
 		<input
@@ -62,7 +62,7 @@
 				class="group flex w-full flex-col gap-1 px-4 hover:text-sky-600 md:h-16 md:flex-row md:items-center "
 			>
 				<div class="flex h-11 items-center">
-					Profil <span class="material-symbols-rounded">expand_more</span>
+					Profil <span class="material-icons">expand_more</span>
 				</div>
 				<ul class="md:absolute md:top-12 md:hidden md:bg-sky-700 md:group-hover:block">
 					<a href="{host}/profil/#visi-misi">
@@ -88,7 +88,7 @@
 				class="group flex w-full flex-col gap-1 px-4 hover:text-sky-600 md:h-16 md:flex-row md:items-center "
 			>
 				<div class="flex h-11 items-center">
-					Informasi <span class="material-symbols-rounded">expand_more</span>
+					Informasi <span class="material-icons">expand_more</span>
 				</div>
 				<ul class="md:absolute md:top-12 md:hidden md:bg-sky-700 md:group-hover:block">
 					<li class="py-2 px-6 hover:text-sky-600 md:p-4 md:hover:bg-sky-900 md:hover:text-white">
@@ -103,7 +103,7 @@
 				class="group flex w-full flex-col gap-1 px-4 hover:text-sky-600 md:h-16 md:flex-row md:items-center "
 			>
 				<div class="flex h-11 items-center">
-					Akademik<span class="material-symbols-rounded">expand_more</span>
+					Akademik<span class="material-icons">expand_more</span>
 				</div>
 				<ul class="md:absolute md:top-12 md:hidden md:bg-sky-700 md:group-hover:block">
 					<li class="py-2 px-6 hover:text-sky-600 md:p-4 md:hover:bg-sky-900 md:hover:text-white">
