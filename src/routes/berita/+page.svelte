@@ -7,7 +7,7 @@
 	// console.log($page.url.searchParams);
 	// let params = $page.url.searchParams
 	// console.log(params.get('y'));
-	let year
+	let year;
 </script>
 
 <div class="text-2xl">
@@ -28,91 +28,79 @@
 </div>
 <main class="container mx-auto">
 	<div class="">
-		<select id="countries" bind:value="{year}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2 mx-auto">
-		  <option value="2022">2022</option>
-		  <option value="2023">2023</option>
-		  <option value="2024">2024</option>
-		  <option value="2025">2025</option>
+		<select
+			id="countries"
+			bind:value={year}
+			class="mx-auto block rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900  focus:border-blue-500 focus:ring-blue-500"
+		>
+			<option value="2022">2022</option>
+			<option value="2023">2023</option>
+			<option value="2024">2024</option>
+			<option value="2025">2025</option>
 		</select>
 	</div>
- 	<section class="grid justify-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 my-8">
-		
+	<section class="my-8 grid justify-center gap-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 		<div class="card mx-4 sm:mx-0">
-			<img  src="{Newsimg}" alt="">
+			<img src={Newsimg} alt="" />
 			<div class="flex justify-between pt-2">
-				<div class="flex text-sm text-slate-700 font-semibold">
-					<span class="material-symbols-rounded text-base">
-						calendar_month
-					</span>
+				<div class="flex text-sm font-semibold text-slate-700">
+					<span class="material-symbols-rounded text-base"> calendar_month </span>
 					17/8/2022
-					<span class="material-symbols-rounded text-base ml-1">
-						schedule
-					</span>
+					<span class="material-symbols-rounded ml-1 text-base"> schedule </span>
 					17:30
 				</div>
 				<Sharemodal url="tes">
 					<button class="">
-						<span class="material-symbols-rounded">
-							share
-						</span>
+						<span class="material-symbols-rounded"> share </span>
 					</button>
-				</Sharemodal>	
+				</Sharemodal>
 			</div>
-			
-			<h2 class="text-lg font-semibold">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic, eveniet.</h2>
-			
+
+			<h2 class="text-lg font-semibold">
+				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic, eveniet.
+			</h2>
 		</div>
 		<div class="card mx-4 sm:mx-0">
-			<img  src="{Newsimg}" alt="">
+			<img src={Newsimg} alt="" />
 			<div class="flex justify-between pt-2">
-				<div class="flex text-sm text-slate-700 font-semibold">
-					<span class="material-symbols-rounded text-base">
-						calendar_month
-					</span>
+				<div class="flex text-sm font-semibold text-slate-700">
+					<span class="material-symbols-rounded text-base"> calendar_month </span>
 					17/8/2022
-					<span class="material-symbols-rounded text-base ml-1">
-						schedule
-					</span>
+					<span class="material-symbols-rounded ml-1 text-base"> schedule </span>
 					17:30
 				</div>
 				<Sharemodal url="tes">
 					<button class="">
-						<span class="material-symbols-rounded">
-							share
-						</span>
+						<span class="material-symbols-rounded"> share </span>
 					</button>
-				</Sharemodal>	
+				</Sharemodal>
 			</div>
-			
-			<h2 class="text-lg font-semibold">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic, eveniet.</h2>
-			
+
+			<h2 class="text-lg font-semibold">
+				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic, eveniet.
+			</h2>
 		</div>
 		<div class="card mx-4 sm:mx-0">
-			<img  src="{Newsimg}" alt="">
+			<img src={Newsimg} alt="" />
 			<div class="flex justify-between pt-2">
-				<div class="flex text-sm text-slate-700 font-semibold">
-					<span class="material-symbols-rounded text-base">
-						calendar_month
-					</span>
+				<div class="flex text-sm font-semibold text-slate-700">
+					<span class="material-symbols-rounded text-base"> calendar_month </span>
 					17/8/2022
-					<span class="material-symbols-rounded text-base ml-1">
-						schedule
-					</span>
+					<span class="material-symbols-rounded ml-1 text-base"> schedule </span>
 					17:30
 				</div>
 				<Sharemodal url="tes">
 					<button class="">
-						<span class="material-symbols-rounded">
-							share
-						</span>
+						<span class="material-symbols-rounded"> share </span>
 					</button>
-				</Sharemodal>	
+				</Sharemodal>
 			</div>
-			
-			<h2 class="text-lg font-semibold">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic, eveniet.</h2>
-			
+
+			<h2 class="text-lg font-semibold">
+				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic, eveniet.
+			</h2>
 		</div>
-    </section>
+	</section>
 	<!-- <embed src= "" width= "500" height= "375"> -->
 	<!-- <div class="my-8 ">
 
@@ -134,7 +122,6 @@
 		  </nav>
 		  
 	</div> -->
-	
 </main>
 
 <style>

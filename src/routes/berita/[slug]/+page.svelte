@@ -1,12 +1,10 @@
 <script>
 	import Newsheader from '$lib/img/newsheader.jpg';
 	import Newsimg from '$lib/img/16_9.png';
-    import Sharemodal from '../../../lib/component/Sharemodal.svelte';
-    import { page } from '$app/stores';
+	import Sharemodal from '../../../lib/component/Sharemodal.svelte';
+	import { page } from '$app/stores';
 
-    let url = $page.url.href;
-
-
+	let url = $page.url.href;
 </script>
 
 <div class="text-2xl">
@@ -22,19 +20,15 @@
 		Lorem ipsum dolor sit amet consectetur adipisicing elit.
 	</div>
 
-    <Sharemodal {url}>
-        <div class="float-right mr-4 flex h-12 w-12 -translate-y-16 cursor-pointer items-center justify-center rounded-full bg-white hover:bg-sky-100">
-            <span class="material-symbols-rounded text-sky-900"> share </span>
-        </div>
-    </Sharemodal>
-    
+	<Sharemodal {url}>
+		<div
+			class="float-right mr-4 flex h-12 w-12 -translate-y-16 cursor-pointer items-center justify-center rounded-full bg-white hover:bg-sky-100"
+		>
+			<span class="material-symbols-rounded text-sky-900"> share </span>
+		</div>
+	</Sharemodal>
 </div>
-<input
-	class="absolute -translate-x-96 opacity-0"
-	type="text"
-	value=""
-	id="link"
-/>
+<input class="absolute -translate-x-96 opacity-0" type="text" value="" id="link" />
 
 <main class="container mx-auto">
 	<img class="pt-8" src={Newsimg} alt="" />
@@ -75,5 +69,4 @@
 		margin-left: 2rem;
 		list-style-type: decimal;
 	}
-
 </style>

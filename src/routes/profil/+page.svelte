@@ -1,7 +1,7 @@
 <script>
-import Container from "../../lib/component/Container.svelte";
-
+	import Container from '../../lib/component/Container.svelte';
 </script>
+
 <Container>
 	<section class="col-span-4 lg:col-span-2">
 		<div id="visi-misi" class="md:h-8" />
@@ -18,28 +18,28 @@ import Container from "../../lib/component/Container.svelte";
 			<p>Untuk mencapai visi di atas, maka misi UIN 2019-2023 adalah sebagai berikut:</p>
 			<ol class="mx-8 list-decimal">
 				<li>
-					Mempercepat peningkatan kuantitas dan kualitas akreditasi dan sertifikasi institusi, program
-					studi, dan unit/lembaga unggul meraih standar mutu internasional.
+					Mempercepat peningkatan kuantitas dan kualitas akreditasi dan sertifikasi institusi,
+					program studi, dan unit/lembaga unggul meraih standar mutu internasional.
 				</li>
 				<li>
-					Menciptakan kampus berwibawa, tertib, indah, bersih, sehat, disiplin, aman, nyaman, toleran,
-					moderat, dan menjadi model ikutan masyarakat.
+					Menciptakan kampus berwibawa, tertib, indah, bersih, sehat, disiplin, aman, nyaman,
+					toleran, moderat, dan menjadi model ikutan masyarakat.
 				</li>
 				<li>
-					Peningkatan kapasitas dosen dan calon alumni untuk berkompetisi di era Industrial Revolution
-					4.0 dan Society 5.0.
+					Peningkatan kapasitas dosen dan calon alumni untuk berkompetisi di era Industrial
+					Revolution 4.0 dan Society 5.0.
 				</li>
 				<li>
 					Peningkatan kualitas manajemen tata kelola layanan Tri Dharma berbasis teknologiinformasi
 					terkinidemi kepuasan stakeholders.
 				</li>
 				<li>
-					Akselerasi pemahaman dan penerapan paradigma transintegrasi ilmu yang mendorong hasil kerja
-					Tri Dharma yang inovatif, dengan semangat entrepreneurship Islami.
+					Akselerasi pemahaman dan penerapan paradigma transintegrasi ilmu yang mendorong hasil
+					kerja Tri Dharma yang inovatif, dengan semangat entrepreneurship Islami.
 				</li>
 				<li>
-					nternasionalisasi kampus melalui kerja sama regional dan global yang mutual benefits dengan
-					menggunakanmatrik Times Higher Education dan Webometriks.
+					nternasionalisasi kampus melalui kerja sama regional dan global yang mutual benefits
+					dengan menggunakanmatrik Times Higher Education dan Webometriks.
 				</li>
 				<li>
 					Peningkatan pendapatan BLU dan pengelolaan koperasi untuk menunjang kualitas dan kuantitas
@@ -61,7 +61,6 @@ import Container from "../../lib/component/Container.svelte";
 		<div class="m-4" />
 	</section>
 </Container>
-
 
 <style>
 	h2 {

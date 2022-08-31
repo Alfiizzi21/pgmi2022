@@ -6,6 +6,6 @@
 
 <Header />
 
-<slot/>
+<slot />
 
 <Footer />

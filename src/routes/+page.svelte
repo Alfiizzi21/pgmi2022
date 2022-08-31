@@ -1,7 +1,28 @@
 <script>
 	import img16_9 from '$lib/img/16_9.png';
 	import Container from '../lib/component/Container.svelte';
+	import { page } from '$app/stores';
+	import { each } from 'svelte/internal';
+
+	let array = [0, 1, 2];
+
+	let origin = $page.url.origin;
+	async function getBerita() {
+		let res = await fetch(
+			'https://630f36a2498924524a884049.mockapi.io/api/berita?p=1&l=4&sortBy=createdAt&order=desc'
+		);
+		let data = await res.json();
+
+		if (res.ok) {
+			return data;
+		} else {
+			throw new Error(data);
+		}
+	}
+
+	let promiseNews = getBerita();
 </script>
+
 <section id="hero">
 	<div class="absolute aspect-video w-full bg-black opacity-20" />
 	<img src="hero.jpg" alt="" />
@@ -11,73 +32,81 @@
 		<section class="col-span-4">
 			<div class="section_title my-8">
 				<h1 class="text-center text-2xl font-bold text-sky-900">BERITA TERBARU</h1>
-	
-				<div class="flex justify-center font-semibold text-sky-700">
-					<div>Lihat Semua Berita</div>
-					<span class="material-symbols-rounded"> arrow_right_alt </span>
+
+				<div class="font-semibold text-sky-700">
+					<a class="mx-auto flex w-max" href="{origin}/berita">
+						<div>Lihat Semua Berita</div>
+						<span class="material-symbols-rounded"> arrow_right_alt </span>
+					</a>
 				</div>
 			</div>
-			<div class="lg:flex">
-				<div class="group m-4">
-					<figure class="overflow-hidden">
-						<img class="transition-transform group-hover:scale-150" src={img16_9} alt="" />
-					</figure>
-					<div class="font-semibold uppercase text-slate-400">17 agustus 2022</div>
-					<h2 class="text-xl font-semibold uppercase group-hover:text-sky-900">
-						Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui, impedit.
-					</h2>
-				</div>
-	
-				<div>
-					<div class="group m-4 flex gap-2">
-						<div class="overflow-hidden">
-							<img
-								class="h-28 w-28 object-cover object-center transition-transform group-hover:scale-150"
-								src={img16_9}
-								alt=""
-							/>
-						</div>
-						<div class="w-3/4">
-							<div class="text-sm font-semibold uppercase text-slate-400">17 agustus 2022</div>
-							<h2 class="text-lg font-semibold uppercase hover:text-sky-900">
-								Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui, impedit.
-							</h2>
-						</div>
+			{#await promiseNews}
+				<div class="lg:flex">
+					<div class="p-4 w-full">
+						<div class="aspect-video w-full bg-slate-300 animate-pulse" />
+						<div class="mt-2 rounded w-40 h-3 bg-slate-200 animate-pulse" />
+						<div class="h-4 w-full mt-2 bg-slate-300 rounded" />
+						<div class="h-4 w-52 mt-2 bg-slate-300 rounded" />
 					</div>
-	
-					<div class="group m-4 flex gap-2">
-						<div class="overflow-hidden">
-							<img
-								class="h-28 w-28 object-cover object-center transition-transform group-hover:scale-150"
-								src={img16_9}
-								alt=""
-							/>
-						</div>
-						<div class="w-3/4">
-							<div class="font-semibold uppercase text-slate-400">17 agustus 2022</div>
-							<h2 class="text-lg font-semibold uppercase hover:text-sky-900">
-								Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui, impedit.
-							</h2>
-						</div>
-					</div>
-	
-					<div class="group m-4 flex gap-2">
-						<div class="overflow-hidden">
-							<img
-								class="h-28 w-28 object-cover object-center transition-transform group-hover:scale-150"
-								src={img16_9}
-								alt=""
-							/>
-						</div>
-						<div class="w-3/4">
-							<div class="font-semibold uppercase text-slate-400">17 agustus 2022</div>
-							<h2 class="text-lg font-semibold uppercase hover:text-sky-900">
-								Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui, impedit.
-							</h2>
-						</div>
+					<div class="w-full">
+						{#each array as a}
+							<div class="p-4 flex gap-2">
+								<div class="aspect-square w-28  bg-slate-300 animate-pulse" />
+								<div class="w-3/4">
+									<div class="mt-2 rounded w-40 h-3 bg-slate-200 animate-pulse" />
+									<div class="h-4 w-full mt-2 bg-slate-300 rounded" />
+									<div class="h-4 w-52 mt-2 bg-slate-300 rounded" />
+								</div>
+							</div>
+						{/each}
 					</div>
 				</div>
-			</div>
+			{:then news}
+				<div class="lg:flex">
+					<div class="m-4">
+						<figure class="overflow-hidden aspect-video w-full">
+							<a href="{origin}/berita/{news[0].slug}">
+								<img class="transition-transform object-cover hover:scale-150" src={news[0].image} alt="" />
+							</a>
+						</figure>
+						<div class="font-semibold uppercase text-slate-400">17 agustus 2022</div>
+						<a href="{origin}/berita/{news[0].slug}">
+							<h2 class="text-xl font-semibold uppercase hover:text-sky-900">
+								{news[0].title}
+							</h2>
+						</a>
+					</div>
+					<div>
+						{#each news as n, i}
+							{#if i != 0}
+								<div class="m-4 flex gap-2">
+									<div class="overflow-hidden">
+										<a href="{origin}/berita/{n.slug}">
+											<img
+												class="h-28 w-28 object-cover object-center transition-transform hover:scale-150"
+												src={n.image}
+												alt=""
+											/>
+										</a>
+									</div>
+									<div class="w-3/4">
+										<div class="text-sm font-semibold uppercase text-slate-400">
+											17 agustus 2022
+										</div>
+										<a href="{origin}/berita/{n.slug}">
+											<h2 class="text-lg font-semibold uppercase hover:text-sky-900">
+												{n.title}
+											</h2>
+										</a>
+									</div>
+								</div>
+							{/if}
+						{/each}
+					</div>
+				</div>
+				{:catch error}
+				<p style="color: red">{error.message}</p>
+			{/await}
 		</section>
 		<section class="col-span-4 lg:col-span-2">
 			<div class="section_title my-8 mx-2 ">
@@ -157,7 +186,6 @@
 		</section>
 	</div>
 </Container>
-
 
 <style>
 	.center_all {

@@ -28,7 +28,6 @@
 </script>
 
 <header
-	
 	class="relative z-50 flex h-16 w-full items-center justify-between bg-sky-900 transition-colors duration-300 md:fixed md:top-0 {headerclass}"
 >
 	<a href={host}>
@@ -52,7 +51,8 @@
 	</div>
 
 	<nav
-		on:click={closeNav} class="absolute top-16 left-0 right-0 transition-transform md:relative md:top-0 md:mx-4 md:-translate-y-0 {navclass}"
+		on:click={closeNav}
+		class="absolute top-16 left-0 right-0 transition-transform md:relative md:top-0 md:mx-4 md:-translate-y-0 {navclass}"
 	>
 		<ul class="flex h-full flex-col gap-1 bg-sky-900 pb-4 md:flex-row md:bg-transparent md:pb-0">
 			<a href={host}>
