@@ -106,12 +106,20 @@
 					Akademik<span class="material-icons">expand_more</span>
 				</div>
 				<ul class="md:absolute md:top-12 md:hidden md:bg-sky-700 md:group-hover:block">
-					<li class="py-2 px-6 hover:text-sky-600 md:p-4 md:hover:bg-sky-900 md:hover:text-white">
-						Kurikulum
-					</li>
-					<li class="py-2 px-6 hover:text-sky-600 md:p-4 md:hover:bg-sky-900 md:hover:text-white">
-						Jadwal Perkuliahan
-					</li>
+					<a href="{host}/kurikulum">
+						<li
+							class=" py-2 px-6 hover:text-sky-600 md:p-4 md:hover:bg-sky-900 md:hover:text-white"
+						>
+							Kurikulum
+						</li>
+					</a>
+					<a href="{host}/jadwal-perkuliahan">
+						<li
+							class=" py-2 px-6 hover:text-sky-600 md:p-4 md:hover:bg-sky-900 md:hover:text-white"
+						>
+							Jadwal Perkuliahan
+						</li>
+					</a>
 				</ul>
 			</li>
 			<a href="#kontak">
