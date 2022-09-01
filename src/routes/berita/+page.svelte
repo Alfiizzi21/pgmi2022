@@ -7,7 +7,26 @@
 	// console.log($page.url.searchParams);
 	// let params = $page.url.searchParams
 	// console.log(params.get('y'));
-	let year;
+
+	async function getBeritaByYear(year) {
+		let res = await fetch(`https://630f36a2498924524a884049.mockapi.io/api/berita?year=${year}&sortBy=createdAt&order=desc`)
+		let data = await res.json();
+
+
+		if (res.ok) {
+			return data;
+		} else {
+			throw new Error(data)
+			
+		}
+	}
+
+	const tanggal = new Date();
+
+	let year = tanggal.getFullYear().toString();
+
+	$: promiseBerita = getBeritaByYear(year)
+	
 </script>
 
 <div class="text-2xl">
@@ -39,8 +58,43 @@
 			<option value="2025">2025</option>
 		</select>
 	</div>
-	<section class="my-8 grid justify-center gap-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-		<div class="card mx-4 sm:mx-0">
+	<section class="my-8 grid justify-center gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+		{#await promiseBerita}
+			<div>loading</div>
+		{:then berita} 
+			{#each berita as b}
+			<div class="card mx-4 sm:mx-0">
+				<figure class="overflow-hidden">
+					<a href="{$page.url.origin}/berita/{b.slug}">
+						<img class="hover:scale-150 transition-transform duration-500 cursor-pointer" src={b.image} alt="" />
+					</a>
+					
+				</figure>
+				
+				<div class="flex justify-between pt-2">
+					<div class="flex text-sm font-semibold text-slate-700">
+						<span class="material-icons text-base"> calendar_month </span>
+						17/8/{b.year}
+						<span class="material-icons ml-1 text-base"> schedule </span>
+						17:30
+					</div>
+					<Sharemodal url="{$page.url.origin}/berita/{b.slug}">
+						<button class="">
+							<span class="material-icons"> share </span>
+						</button>
+					</Sharemodal>
+				</div>
+				<a href="{$page.url.origin}/berita/{b.slug}">
+					<h2 class="text-lg font-semibold hover:text-sky-900 cursor-pointer">
+						{b.title}
+					</h2>
+				</a>
+				
+			</div>
+			{/each}			
+		{/await}
+
+		<!-- <div class="card mx-4 sm:mx-0">
 			<img src={Newsimg} alt="" />
 			<div class="flex justify-between pt-2">
 				<div class="flex text-sm font-semibold text-slate-700">
@@ -79,27 +133,7 @@
 			<h2 class="text-lg font-semibold">
 				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic, eveniet.
 			</h2>
-		</div>
-		<div class="card mx-4 sm:mx-0">
-			<img src={Newsimg} alt="" />
-			<div class="flex justify-between pt-2">
-				<div class="flex text-sm font-semibold text-slate-700">
-					<span class="material-icons text-base"> calendar_month </span>
-					17/8/2022
-					<span class="material-icons ml-1 text-base"> schedule </span>
-					17:30
-				</div>
-				<Sharemodal url="tes">
-					<button class="">
-						<span class="material-icons"> share </span>
-					</button>
-				</Sharemodal>
-			</div>
-
-			<h2 class="text-lg font-semibold">
-				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic, eveniet.
-			</h2>
-		</div>
+		</div> -->
 	</section>
 	<!-- <embed src= "" width= "500" height= "375"> -->
 	<!-- <div class="my-8 ">

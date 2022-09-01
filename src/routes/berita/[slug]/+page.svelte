@@ -4,58 +4,69 @@
 	import Sharemodal from '../../../lib/component/Sharemodal.svelte';
 	import { page } from '$app/stores';
 
-	let url = $page.url.href;
+	async function getBeritaBySlug(slug) {
+		let res = await fetch(`https://630f36a2498924524a884049.mockapi.io/api/berita?slug=${slug}`)
+		let data = await res.json();
+
+		// console.log(data);
+
+		if (res.ok) {
+			return data;
+		} else {
+			throw new Error(data);
+		}
+	}
+
+	const url = $page.url.href;
+	const slug = $page.params.slug
+
+	let promiseBerita = getBeritaBySlug(slug)
 </script>
+{#await promiseBerita}
+	<h2 class="h-[800px] font-semibold text-center md:mt-16">
+		Loading
+	</h2>
+{:then berita} 
+	{#if berita[0] != undefined}
+		<div class="text-2xl">
+			<img
+				class="absolute -z-10 h-52  object-cover object-center sm:h-auto"
+				src={Newsheader}
+				alt="news header"
+			/>
+			<div
+				id="header"
+				class="flex h-52 w-full  items-end p-10  font-bold uppercase text-white sm:h-auto md:text-4xl"
+			>
+			{berita[0].title}
+			</div>
 
-<div class="text-2xl">
-	<img
-		class="absolute -z-10 h-52  object-cover object-center sm:h-auto"
-		src={Newsheader}
-		alt="news header"
-	/>
-	<div
-		id="header"
-		class="flex h-52 w-full  items-end p-10  font-bold uppercase text-white sm:h-auto md:text-4xl"
-	>
-		Lorem ipsum dolor sit amet consectetur adipisicing elit.
-	</div>
-
-	<Sharemodal {url}>
-		<div
-			class="float-right mr-4 flex h-12 w-12 -translate-y-16 cursor-pointer items-center justify-center rounded-full bg-white hover:bg-sky-100"
-		>
-			<span class="material-icons text-sky-900"> share </span>
+			<Sharemodal {url}>
+				<div
+					class="float-right mr-4 flex h-12 w-12 -translate-y-16 cursor-pointer items-center justify-center rounded-full bg-white hover:bg-sky-100"
+				>
+					<span class="material-icons text-sky-900"> share </span>
+				</div>
+			</Sharemodal>
 		</div>
-	</Sharemodal>
-</div>
-<input class="absolute -translate-x-96 opacity-0" type="text" value="" id="link" />
 
-<main class="container mx-auto">
-	<img class="pt-8" src={Newsimg} alt="" />
-	<div class="my-8 flex flex-col gap-2">
-		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium sed assumenda itaque
-			minus inventore libero enim, iste voluptas dignissimos rerum nesciunt, tempora saepe voluptate
-			incidunt, impedit distinctio quae et ipsa deserunt? Fuga aspernatur provident sed saepe nobis
-			magni, deserunt esse aliquam dicta unde tempore necessitatibus officia minus velit asperiores.
-			Blanditiis!
-		</p>
-		<ol>
-			<li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus, eius.</li>
-			<li>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Error vel similique dolore adipisci
-				fuga magni iusto mollitia libero fugiat vitae.
-			</li>
-		</ol>
-		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, perferendis esse. Ipsa
-			beatae doloremque eligendi veniam, inventore pariatur rem quae delectus, consequatur quos,
-			nobis voluptates exercitationem. Tempora, quidem. Id iure odio praesentium exercitationem
-			porro modi maxime esse quaerat laborum libero! Ea eaque ratione libero corporis alias!
-			Reprehenderit facilis blanditiis impedit?
-		</p>
-	</div>
-</main>
+		<main class="container mx-auto">
+			
+			<img class="pt-8" src={berita[0].image} alt="" />
+			<div class="my-8 flex flex-col gap-2">
+				{@html berita[0].body}
+			</div>		
+			
+
+		</main>
+		{:else}
+		<h2 class="h-[800px] font-semibold text-center md:mt-16">
+			tidak ada berita
+		</h2>
+	{/if}
+{:catch}
+<h1>tidak ada berita</h1>
+{/await}
 
 <style>
 	#header {
